@@ -83,7 +83,7 @@
 <body>
     <header>
         <div class="nav">
-            <div class="brand">Salon Bliss</div>
+            <div class="brand">Salon D'Sisi</div>
             <div class="nav-links">
                 <a href="#layanan">Layanan</a>
                 <a href="#proses">Cara kerja</a>
