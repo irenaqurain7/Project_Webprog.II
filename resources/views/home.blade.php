@@ -6,7 +6,7 @@
     <title>Salon Bliss | Booking Salon</title>
     <style>
         :root {
-            --accent: #2563eb;
+            --accent: #ff7edd;
             --accent-2: #f59e0b;
             --text: #111827;
             --muted: #4b5563;
