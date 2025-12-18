@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon Bliss | Booking Salon</title>
+    <title>Salon D'Sisi Booking Salon</title>
     <style>
         :root {
             --accent: #ff7edd;
@@ -117,7 +117,7 @@
             <div class="cards">
                 <div class="card">
                     <h3>Styling Harian</h3>
-                    <p>Blow, curling, atau straightening untuk tampilan rapi setiap hari.</p>
+                    <p>Blow, curling, atau straightening. Durasi: 30-45 menit | Mulai dari Rp 75.000</p>
                 </div>
                 <div class="card">
                     <h3>Haircut &amp; Treatment</h3>
@@ -162,12 +162,12 @@
             <h2>Siap tampil prima?</h2>
             <p>Mulai booking sekarang dan nikmati pengalaman salon yang lebih teratur.</p>
             <a class="btn" href="{{ route('login') }}">Login untuk Booking</a>
-            <p style="margin-top: 10px; color: var(--muted);">Butuh bantuan? Hubungi kami di 0800-123-456 atau email halo@salonbliss.id</p>
+            <p style="margin-top: 10px; color: var(--muted);">Butuh bantuan? Hubungi kami di 085795816124 atau email dedenmuhamad1988@gmail.com</p>
         </section>
     </main>
 
     <footer>
-        &copy; {{ date('Y') }} Salon Bliss. Semua hak dilindungi.
+        &copy; {{ date('Y') }} Salon D'Sisi. Semua hak dilindungi.
     </footer>
 </body>
 </html>
