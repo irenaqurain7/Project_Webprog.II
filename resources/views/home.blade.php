@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon D'Sisi | Booking Salon</title>
+    <title>Salon Bliss | Booking Salon</title>
     <style>
+        :root {
+            --accent: #ed2fdd;
+            --accent-2: #f59e0b;
+            --text: #111827;
+            --muted: #4b5563;
+            --bg: #f4f4f5;
+            --card: #ffffff;
+            --border: #e5e7eb;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         @keyframes float {
@@ -361,20 +370,8 @@
             <p class="lead">Pilih dari berbagai layanan styling dan perawatan rambut premium yang kami tawarkan</p>
             <div class="cards">
                 <div class="card">
-                    <h3>💇 Potong Rambut</h3>
-                    <p>Potong rambut profesional dengan stylist berpengalaman. Dapatkan gaya yang sempurna sesuai dengan bentuk wajah Anda.</p>
-                </div>
-                <div class="card">
-                    <h3>🌈 Coloring & Ombre</h3>
-                    <p>Ubah warna rambut Anda dengan teknik coloring terkini. Dari highlight halus hingga full color yang dramatis.</p>
-                </div>
-                <div class="card">
-                    <h3>✨ Smoothing & Treatment</h3>
-                    <p>Perawatan rambut mendalam untuk rambut yang lebih lembut, berkilau, dan sehat. Cocok untuk semua jenis rambut.</p>
-                </div>
-                <div class="card">
-                    <h3>💅 Styling & Blow Dry</h3>
-                    <p>Styling profesional untuk acara spesial atau daily look. Hasil yang tahan lama dan sempurna.</p>
+                    <h3>Styling Harian</h3>
+                    <p>Blow, curling, atau straightening untuk tampilan rapi setiap hari.</p>
                 </div>
                 <div class="card">
                     <h3>🧴 Deep Conditioning</h3>
@@ -422,16 +419,16 @@
             </div>
         </section>
 
-        <section class="section cta">
-            <h3>Siap Tampil Beda dengan Salon D'Sisi?</h3>
-            <p>Bergabunglah dengan ribuan pelanggan puas yang telah merasakan pengalaman salon mewah kami. Pesan sekarang dan dapatkan diskon khusus untuk pelanggan baru!</p>
-            <a class="btn" href="{{ route('login') }}">🚀 Mulai Booking Sekarang</a>
+        <section id="kontak" class="section cta">
+            <h2>Siap tampil prima?</h2>
+            <p>Mulai booking sekarang dan nikmati pengalaman salon yang lebih teratur.</p>
+            <a class="btn" href="{{ route('login') }}">Login untuk Booking</a>
+            <p style="margin-top: 10px; color: var(--muted);">Butuh bantuan? Hubungi kami di 0800-123-456 atau email halo@salonbliss.id</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Salon D'Sisi. ✨ Kecantikan Rambut Anda adalah Prioritas Kami ✨</p>
-        <p style="margin-top: 8px; color: #8b7fb5;">Hubungi kami: +62 812-3456-7890 | info@salondsisi.com</p>
+        &copy; {{ date('Y') }} Salon Bliss. Semua hak dilindungi.
     </footer>
 </body>
 </html>
