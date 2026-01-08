@@ -355,10 +355,11 @@
 <body>
     <header>
         <div class="nav">
-            <div class="brand">✨ Galaxy Salon</div>
+            <div class="brand">✨ Salon D'Sisi</div>
             <div class="nav-actions">
-                <div class="user-info">Halo, <strong>Sinta Kusuma</strong></div>
-                <form method="POST" action="" style="display: inline;">
+                <div class="user-info">Halo, <strong>{{ auth()->user()->name ?? auth()->user()->email }}</strong></div>
+                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                    @csrf
                     <button type="submit" class="btn-logout">Logout</button>
                 </form>
             </div>
@@ -527,7 +528,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Galaxy Salon. ✨ Kecantikan Rambut Anda adalah Prioritas Kami ✨</p>
+        <p>&copy; {{ date('Y') }} Salon D'Sisi. ✨ Kecantikan Rambut Anda adalah Prioritas Kami ✨</p>
         <p style="margin-top: 8px;">Hubungi kami: +62 812-3456-7890 | info@galaxysalon.com</p>
     </footer>
 </body>
