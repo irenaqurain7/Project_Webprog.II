@@ -346,7 +346,7 @@
                 <p>Rasakan pengalaman salon premium tanpa antri panjang. Pesan styling, potong, atau warna rambut Anda dengan mudah melalui aplikasi kami.</p>
             </div>
             <div class="hero-actions">
-                <a class="btn" href="{{ route('login') }}">🌟 Pesan Sekarang</a>
+                <a class="btn" href="{{ route('login') }}">🌟 Booking Sekarang</a>
                 <a class="btn secondary" href="#layanan">Lihat Layanan</a>
             </div>
             <div class="info">
@@ -423,7 +423,7 @@
             <h2>Siap tampil prima?</h2>
             <p>Mulai booking sekarang dan nikmati pengalaman salon yang lebih teratur.</p>
             <a class="btn" href="{{ route('login') }}">Login untuk Booking</a>
-            <p style="margin-top: 10px; color: var(--muted);">Butuh bantuan? Hubungi kami di 0800-123-456 atau email halo@salonbliss.id</p>
+            <p style="margin-top: 10px; color: var(--muted);">Butuh bantuan? Hubungi kami di 0800-123-456 atau email halo@salonD'sisi.id</p>
         </section>
     </main>
 
