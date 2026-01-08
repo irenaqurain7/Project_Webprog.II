@@ -293,19 +293,35 @@
             <h1>Galaxy Salon</h1>
             <p class="desc">Masuk untuk melanjutkan booking salon premium Anda</p>
             
-            <form method="POST" action="">
+            @if ($errors->any())
+                <div class="alert alert-error">
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
+                </div>
+            @endif
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('login.submit') }}">
+                @csrf
+                
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Masukkan email Anda" required autocomplete="email" autofocus>
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Masukkan password Anda" required>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password Anda" required autocomplete="current-password">
                 </div>
                 
                 <div class="remember-group">
-                    <input type="checkbox" id="remember" name="remember">
+                    <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
                     <label for="remember" style="margin: 0;">Ingat saya</label>
                 </div>
                 
@@ -315,87 +331,22 @@
             <div class="divider">atau</div>
             
             <div class="footer-links">
-                <a href="#forgot">Lupa Password?</a>
-                <a href="#help">Bantuan</a>
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}">Lupa Password?</a>
+                @else
+                    <a href="#">Lupa Password?</a>
+                @endif
+                <a href="#">Bantuan</a>
             </div>
             
             <div class="signup-prompt">
-                Belum punya akun? <a href="#signup">Daftar sekarang</a>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-        }
-        .actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            font-size: 13px;
-        }
-        .actions label { font-weight: 400; }
-        .actions a { color: #2563eb; text-decoration: none; }
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-        .error {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            color: #b91c1c;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            font-size: 13px;
-        }
-        .footer {
-            margin-top: 14px;
-            text-align: center;
-            font-size: 13px;
-            color: #6b7280;
-        }
-        .footer a { color: #2563eb; text-decoration: none; }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Login</h1>
-        <p class="desc">Masuk untuk melanjutkan booking salon.</p>
-
-        <form method="POST" action="{{ route('login.submit') }}">
-            @csrf
-
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            @error('email')
-                <div class="error">{{ $message }}</div>
-            @enderror
-
-            <label for="password">Kata Sandi</label>
-            <input id="password" type="password" name="password" required autocomplete="current-password">
-            @error('password')
-                <div class="error">{{ $message }}</div>
-            @enderror
-
-            <div class="actions">
-                <label><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Ingat saya</label>
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}">Lupa sandi?</a>
+                Belum punya akun? 
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Daftar sekarang</a>
+                @else
+                    <a href="#">Daftar sekarang</a>
                 @endif
             </div>
-
-            <button type="submit">Masuk</button>
-        </form>
-
-        <div class="footer">
-            Belum punya akun? @if (Route::has('register'))<a href="{{ route('register') }}">Daftar</a>@endif
         </div>
     </div>
 </body>
