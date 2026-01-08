@@ -3,162 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Galaxy Salon - Booking Salon</title>
+    <title>Login | Salon D'Sisi - Booking Salon</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --accent: #ed2fdd;
+            --accent-2: #f59e0b;
+            --text: #111827;
+            --muted: #4b5563;
+            --bg: #f4f4f5;
+            --card: #ffffff;
+            --border: #e5e7eb;
         }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(34, 211, 238, 0.8); }
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
         }
-
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(217, 179, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(217, 179, 255, 0.3); }
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0c1445, #1e3a8a, #1e40af);
-            color: #e0e0e0;
+            background: #FAFAFA;
+            color: #4A4A4A;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
         }
-
-        /* Starfield effect */
+        
         body::before {
-            content: '';
+            display: none;
+        }
+        
+        header {
+            background: #FFFFFF;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #E0E0E0;
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 90px 10px, #fff, rgba(0,0,0,0));
-            background-size: 200px 200px;
-            pointer-events: none;
-            z-index: 1;
-            animation: twinkle 3s infinite;
+            z-index: 100;
         }
-
-        .container {
-            width: 100%;
-            max-width: 420px;
-            position: relative;
-            z-index: 2;
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-
-        .card {
-            background: rgba(30, 64, 175, 0.3);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(56, 189, 248, 0.4);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 48px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        h1 {
+        
+        .brand { 
+            font-weight: 800; 
             font-size: 24px;
-            margin-bottom: 8px;
-            text-align: center;
-            background: linear-gradient(135deg, #3b82f6, #22d3ee);
+            background: linear-gradient(135deg, #D9B3FF, #FFB3D9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: glow 2s ease-in-out infinite;
         }
-
-        .desc {
-            margin-bottom: 24px;
-            color: #a5d8ff;
+        
+        .nav-links { 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
             font-size: 14px;
+        }
+        
+        .nav a { 
+            color: #4A4A4A; 
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav a:hover {
+            color: #D9B3FF;
+            border-bottom: 2px solid #D9B3FF;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid #D9B3FF;
+            background: linear-gradient(135deg, #D9B3FF, #FFB3D9);
+            color: #4A4A4A;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(217, 179, 255, 0.4);
+        }
+        
+        .btn.secondary {
+            background: transparent;
+            color: #D9B3FF;
+            border-color: #D9B3FF;
+        }
+        
+        .btn.secondary:hover {
+            background: rgba(217, 179, 255, 0.15);
+        }
+
+        .login-container {
+            margin-top: 80px;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: rgba(217, 179, 255, 0.1);
+            border: 3px solid #D9B3FF;
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(217, 179, 255, 0.2), inset 0 0 15px rgba(217, 179, 255, 0.1);
+        }
+
+        .login-card h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #D9B3FF, #FFB3D9, #FFD9F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
         }
 
+        .login-card p {
+            text-align: center;
+            color: #9B8BA8;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            font-weight: 600;
             margin-bottom: 8px;
+            font-weight: 600;
+            color: #4A4A4A;
             font-size: 14px;
-            color: #e0e0e0;
         }
 
         input[type="email"],
         input[type="password"] {
             width: 100%;
             padding: 12px 14px;
-            border: 2px solid rgba(56, 189, 248, 0.3);
+            border: 2px solid #D9B3FF;
             border-radius: 10px;
             font-size: 14px;
-            background: rgba(59, 130, 246, 0.1);
-            color: #e0e0e0;
+            background: rgba(217, 179, 255, 0.08);
+            color: #4A4A4A;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         input[type="email"]::placeholder,
         input[type="password"]::placeholder {
-            color: #7bb5d5;
+            color: #B8A8C4;
         }
 
         input[type="email"]:focus,
         input[type="password"]:focus {
             outline: none;
-            border-color: #3b82f6;
-            background: rgba(59, 130, 246, 0.2);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #3b82f6, #22d3ee);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-        }
-
-        .btn:active {
-            transform: translateY(0);
+            border-color: #FFB3D9;
+            background: rgba(217, 179, 255, 0.15);
+            box-shadow: 0 0 15px rgba(217, 179, 255, 0.3);
         }
 
         .remember-group {
@@ -167,40 +197,62 @@
             gap: 8px;
             margin-bottom: 20px;
             font-size: 14px;
+            color: #4A4A4A;
         }
 
         input[type="checkbox"] {
             width: 18px;
             height: 18px;
             cursor: pointer;
-            accent-color: #3b82f6;
+            accent-color: #D9B3FF;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #D9B3FF, #FFB3D9);
+            color: #4A4A4A;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(217, 179, 255, 0.3);
+        }
+
+        .form-group button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(217, 179, 255, 0.5);
         }
 
         .divider {
             text-align: center;
             margin: 24px 0;
-            color: #7bb5d5;
+            color: #9B8BA8;
             font-size: 14px;
         }
 
         .divider::before {
             content: '';
             display: inline-block;
-            width: 100px;
+            width: 80px;
             height: 1px;
-            background: rgba(56, 189, 248, 0.3);
+            background: #D9B3FF;
             margin-right: 10px;
             vertical-align: middle;
+            opacity: 0.5;
         }
 
         .divider::after {
             content: '';
             display: inline-block;
-            width: 100px;
+            width: 80px;
             height: 1px;
-            background: rgba(56, 189, 248, 0.3);
+            background: #D9B3FF;
             margin-left: 10px;
             vertical-align: middle;
+            opacity: 0.5;
         }
 
         .footer-links {
@@ -212,37 +264,38 @@
         }
 
         .footer-links a {
-            color: #3b82f6;
+            color: #D9B3FF;
             text-decoration: none;
             transition: all 0.3s;
+            font-weight: 600;
         }
 
         .footer-links a:hover {
-            color: #7dd3fc;
+            color: #FFB3D9;
             text-decoration: underline;
         }
 
         .signup-prompt {
             text-align: center;
             margin-top: 24px;
-            color: #a5d8ff;
+            color: #9B8BA8;
             font-size: 14px;
         }
 
         .signup-prompt a {
-            color: #3b82f6;
+            color: #D9B3FF;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .signup-prompt a:hover {
-            color: #7dd3fc;
+            color: #FFB3D9;
         }
 
         .alert {
             margin-bottom: 20px;
-            padding: 12px;
+            padding: 12px 14px;
             border-radius: 10px;
             font-size: 14px;
             animation: slide-in 0.3s ease-out;
@@ -260,43 +313,70 @@
         }
 
         .alert-error {
-            background: rgba(239, 68, 68, 0.2);
-            border: 2px solid rgba(239, 68, 68, 0.5);
-            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.15);
+            border: 2px solid rgba(239, 68, 68, 0.4);
+            color: #dc2626;
         }
 
         .alert-success {
-            background: rgba(34, 197, 94, 0.2);
-            border: 2px solid rgba(34, 197, 94, 0.5);
-            color: #86efac;
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            color: #16a34a;
         }
 
-        @media (max-width: 480px) {
-            .card {
+        @media (max-width: 640px) {
+            .nav {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .login-container {
+                margin-top: 100px;
+                padding: 15px;
+            }
+
+            .login-card {
                 padding: 24px;
             }
 
-            h1 {
-                font-size: 20px;
+            .login-card h1 {
+                font-size: 24px;
             }
 
-            .logo {
-                font-size: 40px;
+            .btn {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="logo">✨</div>
-            <h1>Galaxy Salon</h1>
-            <p class="desc">Masuk untuk melanjutkan booking salon premium Anda</p>
+    <header>
+        <div class="nav">
+            <div class="brand">✨ Salon D'Sisi</div>
+            <div class="nav-links">
+                <a href="/">Beranda</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h1>🌟 Login</h1>
+            <p>Masuk untuk melanjutkan booking salon premium Anda</p>
 
             @if ($errors->any())
                 <div class="alert alert-error">
                     @foreach ($errors->all() as $error)
-                        {{ $error }}
+                        {{ $error }}<br>
                     @endforeach
                 </div>
             @endif
@@ -325,7 +405,9 @@
                     <label for="remember" style="margin: 0;">Ingat saya</label>
                 </div>
 
-                <button type="submit" class="btn">🌟 Login Sekarang</button>
+                <div class="form-group">
+                    <button type="submit">🌟 Login Sekarang</button>
+                </div>
             </form>
 
             <div class="divider">atau</div>
