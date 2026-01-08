@@ -333,8 +333,16 @@
                 <a href="#layanan">Layanan</a>
                 <a href="#proses">Cara Kerja</a>
                 <a href="#kontak">Kontak</a>
-                <a class="btn secondary" href="{{ route('login') }}">Login</a>
-                <a class="btn" href="{{ route('login') }}">Pesan Sekarang</a>
+                @auth
+                    <a class="btn secondary" href="{{ route('dashboard') }}">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn secondary" style="background: transparent; border: 2px solid #D9B3FF;">Logout</button>
+                    </form>
+                @else
+                    <a class="btn secondary" href="{{ route('login') }}">Login</a>
+                    <a class="btn" href="{{ route('login') }}">Pesan Sekarang</a>
+                @endauth
             </div>
         </div>
     </header>
@@ -346,7 +354,11 @@
                 <p>Rasakan pengalaman salon premium tanpa antri panjang. Pesan styling, potong, atau warna rambut Anda dengan mudah melalui aplikasi kami.</p>
             </div>
             <div class="hero-actions">
-                <a class="btn" href="{{ route('login') }}">🌟 Booking Sekarang</a>
+                @auth
+                    <a class="btn" href="{{ route('dashboard') }}">🌟 Booking Sekarang</a>
+                @else
+                    <a class="btn" href="{{ route('login') }}">🌟 Booking Sekarang</a>
+                @endauth
                 <a class="btn secondary" href="#layanan">Lihat Layanan</a>
             </div>
             <div class="info">
