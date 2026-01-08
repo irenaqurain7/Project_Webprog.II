@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Route::view('/', 'home');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.submit');
+
+// Dashboard (hanya untuk user yang sudah login)
+Route::view('/dashboard', 'dashboard')->middleware('auth')->name('dashboard');
+
+// Logout
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
